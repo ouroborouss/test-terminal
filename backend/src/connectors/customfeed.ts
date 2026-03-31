@@ -2,7 +2,7 @@ import WebSocket from 'ws';
 import { broadcast } from '../ws/server';
 import { sendPushNotification } from '../notifications/expo';
 
-const WS_URL = 'ws://3.66.89.194:8080';
+const WS_URL = process.env.CUSTOM_FEED_URL ?? '';
 
 export interface CustomFeedItem {
   type: 'news';

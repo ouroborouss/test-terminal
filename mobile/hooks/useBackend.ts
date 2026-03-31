@@ -1,10 +1,8 @@
 import { useEffect } from 'react';
 import { useStore } from '../store';
 
-// Change this to your PC's local IP when on same network
-// or your VPS/Tailscale address for remote access
-const BACKEND_HOST = 'http://192.168.1.100:3000';
-const WS_HOST = 'ws://192.168.1.100:8080';
+const BACKEND_HOST = process.env.EXPO_PUBLIC_BACKEND_HOST ?? '';
+const WS_HOST = process.env.EXPO_PUBLIC_WS_HOST ?? '';
 
 export function useBackend() {
   const { addNews, setWatchlist, setPositions, updatePrice } = useStore();
