@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment — never commit real keys
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+release/
+build/
+out/
+
+# Backend runtime data — contains personal positions/watchlist
+backend/data/
+
+# Electron builder
+desktop/release/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+.claude/
+CLAUDE.md

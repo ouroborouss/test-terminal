@@ -1,0 +1,48 @@
+{
+  "name": "terminal-desktop",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "tsc --project tsconfig.electron.json && concurrently -k \"vite\" \"wait-on http://localhost:1420 && electron .\"",
+    "build": "tsc --project tsconfig.electron.json && vite build",
+    "package": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "clsx": "^2.1.0",
+    "lightweight-charts": "^5.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.4.3",
+    "vite": "^5.4.8",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.terminal.trading",
+    "productName": "FD Terminal",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*.js"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "trading-terminal",
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix desktop install && npm --prefix mobile install",
+    "backend": "npm --prefix backend run dev",
+    "desktop": "npm --prefix desktop run dev",
+    "mobile": "npm --prefix mobile start",
+    "dev": "concurrently -n backend,desktop -c cyan,magenta \"npm run backend\" \"npm run desktop\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
